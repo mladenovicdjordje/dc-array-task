@@ -12,6 +12,10 @@ public class main {
         Scanner scan = new Scanner(System.in);
 
         int n = scan.nextInt(); //number of elements
+        if (n==0) {
+            System.out.println("Your array must contain more than zero elements.");
+            return;
+        }
         int[] array = new int[n];
 
 
@@ -129,10 +133,23 @@ public class main {
     public static void sorting (int[] array) {
         //Sorting the array
         System.out.print("Sorted array: ");
-        Arrays.sort(array);
-        for (int i = 0; i < array.length; i++) {
+
+        //Bubble sort
+        for (int i = 0; i < array.length; i++){
+            for (int j = i+1; j<array.length; j++){
+
+                int temp = 0;
+                if (array[i]>array[j]){
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+
+            }
             System.out.print(array[i] + " ");
         }
+
+
     }
 
 
